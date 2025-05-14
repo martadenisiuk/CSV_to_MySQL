@@ -1,0 +1,9 @@
+{
+  "host_name": "your_hostname",
+  "user_name": "your_username",
+  "user_password": "your_user_password",
+  "database": "your_database",
+  "list_of_tables": [
+"Your_list_of_tables"
+  ]
+}
