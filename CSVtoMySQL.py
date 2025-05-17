@@ -23,6 +23,7 @@ list_of_tables = config["list_of_tables"]
 print(f"Connecting to database {database} on server {host_name} as {user_name}")
 
 def create_server_engine(host_name, user_name, user_password, database):
+    
     engine = None
     try:
         path_sql = "mysql+mysqlconnector://{}:{}@{}/{}".format(user_name, user_password, host_name, database)
@@ -46,7 +47,7 @@ def create_table_sql(df, conn, file_name, if_exists='replace'):
     df['hour_date_time'] = [start_date + timedelta(hours=i) for i in hours]
 
     # Insert the DataFrame into the SQL database and create constraints
-    df.to_sql(file_name.lower(), conn, if_exists=if_exists, index=False)  ## potem zmienić na "append"
+    df.to_sql(file_name.lower(), conn, if_exists=if_exists, index=False)
 
     add_index = text(f"""ALTER TABLE {file_name.lower()} ADD COLUMN ID INT(11) UNSIGNED 
                      AUTO_INCREMENT FIRST,
@@ -107,7 +108,7 @@ if __name__ == '__main__':
 
     for file_name in list_of_tables:
 
-        df = pd.read_csv(path + '\\1\\' + file_name + ".csv")
+        df = pd.read_csv(path + file_name + ".csv")
 
         while True:
 
