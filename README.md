@@ -23,3 +23,5 @@ python CSVtoMYSQL.py
 - SQL does not support storing 'inf' or '-inf' values. According to SQL documentation, these values are not recognized and can cause errors. Therefore, they have been replaced with NULLs
 
 ## Possible future development
+- Handling errors related to missing or malformed CSV files
+- Catching and managing database-related exceptions (e.g., connection issues, SQL errors, constraint violations)
