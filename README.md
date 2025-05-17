@@ -21,3 +21,5 @@ python CSVtoMYSQL.py
 - Reads CSV files and inserts data into MySQL.
 - Creates tables dynamically if they don’t exist.
 - SQL does not support storing 'inf' or '-inf' values. According to SQL documentation, these values are not recognized and can cause errors. Therefore, they have been replaced with NULLs
+
+## Possible future development
